@@ -1,0 +1,39 @@
+package SpitalRoz;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Spital {
+    private static Spital instance;
+    private static final Logger LOGGER = Logger.getLogger(Spital.class.getName());
+
+    // Private constructor to prevent instantiation from outside
+    private Spital() {
+    }
+
+    public static synchronized Spital getInstance() {
+        if (instance == null) {
+            instance = new Spital();
+            LOGGER.log(Level.INFO, "Spital instance created.");
+        }
+        return instance;
+    }
+
+    public void admitPatient(String patientName) {
+        LOGGER.log(Level.INFO, "Admitting patient: " + patientName);
+    }
+
+    public void dischargePatient(String patientName) {
+        LOGGER.log(Level.INFO, "Discharging patient: " + patientName);
+    }
+
+    public static void main(String[ ] args) {
+        Spital h = new Spital();
+
+        
+        h.admitPatient("Ana");
+        h.dischargePatient("Ana");
+
+    }
+
+}
