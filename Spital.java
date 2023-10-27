@@ -7,7 +7,7 @@ public class Spital {
     private static Spital instance;
     private static final Logger LOGGER = Logger.getLogger(Spital.class.getName());
 
-    // Private constructor to prevent instantiation from outside
+    // Constructor privat pt prevenire instantiere din afara clasei
     private Spital() {
     }
 
